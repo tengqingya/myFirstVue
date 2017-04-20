@@ -4,6 +4,10 @@
     <router-view></router-view>
     <p>aaaaaaaaaaAAAA</p>
     <firstcomponent></firstcomponent>
+    <ul>
+      <li><router-link to="/first">点我跳转到第一个vue</router-link></li>
+      <li><router-link to="/second">点我跳转到第二个vue</router-link></li>
+    </ul>
   </div>
 </template>
 
