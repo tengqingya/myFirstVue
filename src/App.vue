@@ -3,12 +3,23 @@
     <img src="./assets/logo.png">
     <router-view></router-view>
     <p>aaaaaaaaaaAAAA</p>
+    <firstcomponent></firstcomponent>
   </div>
 </template>
 
+
 <script>
+  import firstcomponent from './components/firstcomponent'
+
+
 export default {
-  name: 'app'
+  name: 'app',
+  data () {
+    return {
+      msg: 'hello!*&'
+    }
+  },
+  components: {firstcomponent}
 }
 </script>
 
