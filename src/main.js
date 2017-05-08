@@ -2,7 +2,11 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+
 import VueRouter from "vue-router";
+
+import Element from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
 
 
 Vue.config.productionTip = false
@@ -11,6 +15,10 @@ Vue.config.productionTip = false
 const First = { template: '<div><h2>我是第 1 个子页面</h2></div>' }
 import secondcomponent from './components/secondcomponent'
 import VueResource from 'vue-resource'
+
+
+
+Vue.use(Element);
 
 //写在最外层如果写在各个vue组件里面 则 没效果
 Vue.use(VueResource);

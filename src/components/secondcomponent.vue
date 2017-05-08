@@ -12,6 +12,12 @@
 </template>
 
 <script>
+  import Vue from 'vue'
+  import Element from 'element-ui'
+  import 'element-ui/lib/theme-default/index.css'
+
+  Vue.use(Element);
+
   export default {
     data() {
       return {
@@ -30,6 +36,7 @@
 
         this.articles = response.data.subjects
         // this.articles = response.data["subjects"] 也可以
+        this.$message('loading resources suc');
 
       }, function(response) {
         // 这里是处理错误的回调
