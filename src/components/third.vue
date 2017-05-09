@@ -1,8 +1,28 @@
 <template>
   <div>
-  <el-input v-model="aa" placeholder="请输入内容" size="small" icon="search" :on-icon-click="onIconClick" :adafda="aa" :auto-complete="autoComplete" :myAutoComplete="myAutoComplete">
-    <label slot="prepend">this is slot</label>
+  <el-input v-model="aa" placeholder="请输入内容" size="small" icon="search" :on-icon-click="onIconClick" :adafda="aa" :auto-complete="autoComplete" :myAutoComplete="myAutoComplete" ref="input">
+    <label slot="prepend" v-if="showS">this is slot</label>
   </el-input>
+    <div>
+      <slot name="slot1" v-if="showSlot1">
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ul>
+      </slot>
+    </div>
+    <div>
+      <slot name="showSlot2">
+        <ui>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ui>
+      </slot>
+    </div>
   </div>
 </template>
 
@@ -27,10 +47,19 @@
           type: String,
           default: 'off'
         },
+        showS:{
+          type: [Boolean, Object],
+          default: false
+        },
+      showSlot1:{
+        type: [Boolean, Object],
+        default: true
+      }
     },
     methods:{
       onIconClick:function () {
-          console.log("onIconClick")
+        console.log("onIconClick")
+        console.log(this.$refs['input'].$el)
       }
     }
   }
