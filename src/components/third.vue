@@ -1,6 +1,6 @@
 <template>
   <div>
-  <el-input v-model="aa" placeholder="请输入内容" size="small" icon="search" :on-icon-click="onIconClick" :adafda="aa" :auto-complete="autoComplete" :myAutoComplete="myAutoComplete" ref="input">
+  <el-input @focus="myFocus($event)" v-model="aa" placeholder="请输入内容" size="small" icon="search" :on-icon-click="onIconClick" :adafda="aa" :auto-complete="autoComplete" :myAutoComplete="myAutoComplete" ref="input">
     <label slot="prepend" v-if="showS">this is slot</label>
   </el-input>
     <div>
@@ -60,6 +60,10 @@
       onIconClick:function () {
         console.log("onIconClick")
         console.log(this.$refs['input'].$el)
+      },
+      myFocus:function (event) {
+        console.log("myFocus:子组件在focus的时候触发了focus方法，父组件通过@focus='**'来和子组件通信,$event可省略")
+        console.log(event.target.value)
       }
     }
   }
