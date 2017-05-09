@@ -4,6 +4,7 @@
     <router-view></router-view>
     <p>aaaaaaaaaaAAAA</p>
     <firstcomponent></firstcomponent>
+    <thirdcomponent :my-auto-complete="myAutoComplete"></thirdcomponent>
     <ul>
       <li><router-link to="/first">点我跳转到第一个vue</router-link></li>
       <li><router-link to="/second">点我跳转到第二个vue</router-link></li>
@@ -15,15 +16,18 @@
 <script>
   import firstcomponent from './components/firstcomponent'
 
+  import thirdcomponent from './components/third'
+
 
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'hello!*&'
+      msg: 'hello!*&',
+      myAutoComplete: 'hello!*&'
     }
   },
-  components: {firstcomponent}
+  components: {firstcomponent,thirdcomponent}
 }
 </script>
 

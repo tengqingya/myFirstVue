@@ -16,8 +16,6 @@ const First = { template: '<div><h2>我是第 1 个子页面</h2></div>' }
 import secondcomponent from './components/secondcomponent'
 import VueResource from 'vue-resource'
 
-
-
 Vue.use(Element);
 
 //写在最外层如果写在各个vue组件里面 则 没效果

@@ -2,7 +2,7 @@
   <div id="secondcomponent">
     <h1>I am another page</h1>
     <a> written by {{ author }} </a>
-    <p> 感谢 <a href="https://github.com/showonne">showonne</a>大神的技术指导</p>
+    <p> 感谢 <a href="https://www.toutiao.com/c/user/3053829142/#mid=1563026194727938">showonne</a>大神的技术指导</p>
     <ul>
       <li v-for="article in articles">
         {{article.title}}
