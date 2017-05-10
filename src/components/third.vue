@@ -23,6 +23,8 @@
         </ui>
       </slot>
     </div>
+
+    <input type="checkbox" name="test_checkbox" :checked="test" @click="onClick"> Test
   </div>
 </template>
 
@@ -37,7 +39,8 @@
     data() {
       return {
         aa: '',
-        autoComplete:'on'
+        autoComplete:'on',
+        test: false
       }
     },
     mounted: function() {
@@ -62,8 +65,19 @@
         console.log(this.$refs['input'].$el)
       },
       myFocus:function (event) {
-        console.log("myFocus:子组件在focus的时候触发了focus方法，父组件通过@focus='**'来和子组件通信,$event可省略")
+        console.log("myFocus:子组件在focus的时候触发了focus方法，父组件通过@focus='**'来和子组件通信,$event可省略,传入多个参数的时候不可以省略")
         console.log(event.target.value)
+        this.test = !this.test
+        this.aa="adsadadasdsda"
+        console.log("如果不使用:checked无法实现双向绑定")
+      },
+      onClick: function (e) {
+        if (!confirm('are you sure?')) {
+          e.preventDefault()
+        } else {
+          this.test = e.target.checked
+          console.log(this.test)
+        }
       }
     }
   }
