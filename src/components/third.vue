@@ -25,6 +25,7 @@
     </div>
 
     <input type="checkbox" name="test_checkbox" :checked="test" @click="onClick"> Test
+    <mydropdown :handle-drop-down="handleDropDown2" :button-text="orderTypeText" :dropdowndata="orderType"></mydropdown>
   </div>
 </template>
 
@@ -33,6 +34,8 @@
   import Element from 'element-ui'
   import 'element-ui/lib/theme-default/index.css'
 
+  import mydropdown from './dropdown'
+
   Vue.use(Element);
 
   export default {
@@ -40,11 +43,15 @@
       return {
         aa: '',
         autoComplete:'on',
-        test: false
+        test: false,
+
+        orderTypeText:"套餐类型",
+        orderType:[{"id":-1,"name":"全部"},{"id":0,"name":"普通套餐"},{"id":1,"name":"即充套餐"}]
       }
     },
     mounted: function() {
     },
+    components: {mydropdown},
     props:{
         myAutoComplete:{
           type: String,
@@ -78,7 +85,11 @@
           this.test = e.target.checked
           console.log(this.test)
         }
-      }
+      },
+      handleDropDown2(index) {
+        this.orderTypeText = this.orderType[index].name
+        this.type = this.orderType[index].id
+      },
     }
   }
 </script>
