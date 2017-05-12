@@ -25,7 +25,9 @@
     </div>
 
     <input type="checkbox" name="test_checkbox" :checked="test" @click="onClick"> Test
-    <mydropdown :handle-drop-down="handleDropDown2" :button-text="orderTypeText" :dropdowndata="orderType"></mydropdown>
+    <mydropdown  :button-text="orderTypeText" :dropdowndata="orderType" :name="dropname" :id="dropid" v-on:dropdown="dropdown"></mydropdown>
+    <timepicker v-model="date"></timepicker>
+    <!--<myinput></myinput>-->
   </div>
 </template>
 
@@ -35,6 +37,8 @@
   import 'element-ui/lib/theme-default/index.css'
 
   import mydropdown from './dropdown'
+  import timepicker from  './timepicker'
+  import myinput from  './input'
 
   Vue.use(Element);
 
@@ -46,12 +50,16 @@
         test: false,
 
         orderTypeText:"套餐类型",
-        orderType:[{"id":-1,"name":"全部"},{"id":0,"name":"普通套餐"},{"id":1,"name":"即充套餐"}]
+        orderType:[{"id":-1,"name1":"全部"},{"id":0,"name1":"普通套餐"},{"id":1,"name1":"即充套餐"}],
+        dropname:"name1",
+        dropid:"id",
+
+        date:[]
       }
     },
     mounted: function() {
     },
-    components: {mydropdown},
+    components: {mydropdown,timepicker,myinput},
     props:{
         myAutoComplete:{
           type: String,
@@ -86,10 +94,11 @@
           console.log(this.test)
         }
       },
-      handleDropDown2(index) {
-        this.orderTypeText = this.orderType[index].name
-        this.type = this.orderType[index].id
-      },
+      dropdown:function (a,b) {
+          console.log(a)
+          console.log(b)
+        this.orderTypeText = b
+      }
     }
   }
 </script>
