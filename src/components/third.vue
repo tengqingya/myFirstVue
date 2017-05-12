@@ -26,7 +26,7 @@
 
     <input type="checkbox" name="test_checkbox" :checked="test" @click="onClick"> Test
     <mydropdown  :button-text="orderTypeText" :dropdowndata="orderType" :name="dropname" :id="dropid" v-on:dropdown="dropdown"></mydropdown>
-    <timepicker v-model="date"></timepicker>
+    <timepicker :date="date" :timechange="timeChange"></timepicker>
     <!--<myinput></myinput>-->
   </div>
 </template>
@@ -95,9 +95,10 @@
         }
       },
       dropdown:function (a,b) {
-          console.log(a)
-          console.log(b)
         this.orderTypeText = b
+      },
+      timeChange:function (val) {
+        this.date=val
       }
     }
   }

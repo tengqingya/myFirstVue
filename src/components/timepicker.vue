@@ -14,21 +14,20 @@
     name:"timepicker",
     data(){
         return{
-            date2:[]
+            date2:this.date
         }
     },
-    props: {
-      value: {
-        type: Array,
-        default: () => [],
-      }
-    },
+    props: ["date"],
     computed:{
     },
     watch:{
-      value: function(val){
+      date: function(val){
           console.log(val)
         this.date2 = val
+      },
+      date2:function (val) {
+        console.log(val)
+        this.$emit("timechange",val);
       }
     }
   }
