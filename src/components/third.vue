@@ -28,6 +28,7 @@
     <mydropdown  :button-text="orderTypeText" :dropdowndata="orderType" :name="dropname" :id="dropid" v-on:dropdown="dropdown"></mydropdown>
     <timepicker :date="date" :timechange="timeChange"></timepicker>
     <!--<myinput></myinput>-->
+    <fileupload></fileupload>
   </div>
 </template>
 
@@ -39,6 +40,7 @@
   import mydropdown from './dropdown'
   import timepicker from  './timepicker'
   import myinput from  './input'
+  import fileupload from  './fileupload'
 
   Vue.use(Element);
 
@@ -59,7 +61,7 @@
     },
     mounted: function() {
     },
-    components: {mydropdown,timepicker,myinput},
+    components: {mydropdown,timepicker,myinput,fileupload},
     props:{
         myAutoComplete:{
           type: String,
