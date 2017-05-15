@@ -43,13 +43,15 @@
             num:{
                 type: Number,
                 default: 1
-            }
+            },
+            files:Array
         },
         methods: {
             handleRemove(file, fileList) {
+                console.log(file)
                 this.fileList = fileList
-                this.$emit("filedel",file.response.value)
-                removeArrByValue(this.originalFileList,file.response.value)
+                this.$emit("filedel",file.response?file.response.value:file.url)
+                removeArrByValue(this.originalFileList,file.response?file.response.value:file.url)
             },
             handleSuccess(response, file, fileList){
                 this.originalFileList.push(file.response.value)
@@ -68,6 +70,17 @@
                     this.fileList = fileList
                 }
             }
+        },
+        watch:{
+            files:function (e) {
+                let arr = [];
+                this.originalFileList = []
+                e.forEach((i, j)=> {
+                    arr.push({"name":i.name,"url":i.raw.url})
+                    this.originalFileList.push(i.raw.url)
+                })
+                this.fileList = arr
+            }
         }
     }
 
@@ -81,14 +94,18 @@
         }
     }
 </script>
+
+<style>
+    .el-upload__input{
+        display: none !important;
+    }
+</style>
 <!--
 import fileupload from '../plugin/fileupload.vue'
-
 import {removeArrByValue} from '../util/arrutil.js'
+import {rowFile} from '../util/file.js'
 
-fileList:[],
-fileNum:3,
-
+<fileupload @fileadd="fileAdd" @filedel="fileDel" :files="fileShow" :num="fileNum"></fileupload>
 
             fileAdd:function (file) {
                 this.fileList.push(file)
@@ -96,6 +113,13 @@ fileNum:3,
             fileDel:function (file) {
                 removeArrByValue(this.fileList,file)
             },
+
+            fileList:[],
+            fileShow:[],
+            fileNum:3,
+
+            this.fileList = ["http://image.meizu.com/image/ebook/823df1d1320742efabebe46565518abaz/auto"]
+              this.fileShow = [new rowFile("http://image.meizu.com/image/ebook/823df1d1320742efabebe46565518abaz/auto")]
+
+
 -->
-<style>
-</style>

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24d6a94c-6e61-4d97-869b-78c33643bffc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/radio.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/fileupload.vue" afterPath="$PROJECT_DIR$/src/components/fileupload.vue" />
     </list>
     <ignored path="my-first-vue-project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,7 +25,7 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
+            <state relative-caret-position="0">
               <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -57,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="third.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="third.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/third.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="109" selection-end-column="8" />
+            <state relative-caret-position="-1060">
+              <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="29" />
               <folding>
                 <element signature="e#1064#1085#0" expanded="true" />
               </folding>
@@ -89,14 +88,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fileupload.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fileupload.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/fileupload.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1421">
-              <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-              <folding>
-                <element signature="e#645#666#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="312">
+              <caret line="111" column="14" lean-forward="true" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -160,8 +157,8 @@
         <option value="$PROJECT_DIR$/src/components/dropdown.vue" />
         <option value="$PROJECT_DIR$/src/components/timepicker.vue" />
         <option value="$PROJECT_DIR$/src/components/third.vue" />
-        <option value="$PROJECT_DIR$/src/components/fileupload.vue" />
         <option value="$PROJECT_DIR$/src/components/radio.vue" />
+        <option value="$PROJECT_DIR$/src/components/fileupload.vue" />
       </list>
     </option>
   </component>
@@ -429,15 +426,15 @@
       <workItem from="1494242460292" duration="30529000" />
       <workItem from="1494400004421" duration="55731000" />
       <workItem from="1494765335716" duration="281000" />
-      <workItem from="1494831926633" duration="960000" />
+      <workItem from="1494831926633" duration="5960000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100249000" />
+    <option name="totallyTimeSpent" value="105249000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13277134" sideWeight="0.4937107" order="0" side_tool="false" content_ui="combo" />
@@ -787,7 +784,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
+        <state relative-caret-position="0">
           <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -856,16 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/fileupload.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1421">
-          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding>
-            <element signature="e#645#666#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/dropdown.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
@@ -884,11 +871,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/third.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="109" selection-end-column="8" />
+        <state relative-caret-position="-1060">
+          <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="29" />
           <folding>
             <element signature="e#1064#1085#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/fileupload.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="111" column="14" lean-forward="true" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
