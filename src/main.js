@@ -24,6 +24,8 @@ Vue.use(VueResource);
 //这里一定要写，不然不报错，也找不出原因
 Vue.use(VueRouter);
 
+import store from './vuex/store.js'
+
 const router =new VueRouter({
   mode: 'history',
   base: __dirname,
@@ -43,6 +45,7 @@ const router =new VueRouter({
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })

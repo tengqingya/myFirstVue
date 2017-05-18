@@ -28,7 +28,9 @@
     <mydropdown  :button-text="orderTypeText" :dropdowndata="orderType" :name="dropname" :id="dropid" v-on:dropdown="dropdown"></mydropdown>
     <timepicker :date="date" :timechange="timeChange"></timepicker>
     <!--<myinput></myinput>-->
-    <fileupload></fileupload>
+    <radiovuex></radiovuex>
+    <button @click="testVuex1">testVuex1</button>
+    <button @click="testVuex2">testVuex2</button>
   </div>
 </template>
 
@@ -41,6 +43,7 @@
   import timepicker from  './timepicker'
   import myinput from  './input'
   import fileupload from  './fileupload'
+  import radiovuex from  './radio_vuex'
 
   Vue.use(Element);
 
@@ -61,7 +64,7 @@
     },
     mounted: function() {
     },
-    components: {mydropdown,timepicker,myinput,fileupload},
+    components: {mydropdown,timepicker,myinput,fileupload,radiovuex},
     props:{
         myAutoComplete:{
           type: String,
@@ -101,6 +104,15 @@
       },
       timeChange:function (val) {
         this.date=val
+      },
+
+      testVuex1:function () {
+          console.log(this.$store)
+        this.$store.dispatch('pick',0)
+      },
+      testVuex2:function () {
+        console.log(this.$store)
+        this.$store.dispatch('pick',1)
       }
     }
   }
