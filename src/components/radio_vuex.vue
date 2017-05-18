@@ -4,7 +4,7 @@
 -->
 <template>
     <div>
-        <el-radio class="radio" v-model="radio" :label="item.id" v-for="(item,index) in data" :key="index">{{item.name}}</el-radio>
+        <el-radio class="radio" v-model="myradio" :label="item.id" v-for="(item,index) in data" :key="index" @click.native.prevent="myclick(index)">{{item.name}}</el-radio>
     </div>
 </template>
 
@@ -14,6 +14,7 @@
 //    import 'element-ui/lib/theme-default/index.css'
 //
 //    Vue.use(radio);
+import { mapGetters } from 'vuex'
 
 export default {
   name: "eleradiovuex",
@@ -23,20 +24,29 @@ export default {
       data: this.$store.state.checkData,
     };
   },
-  methods: {},
-  computed: {
-    radio: {
-      get () {
-        console.log("compute radio")
-        return this.$store.state.isCheck
-      },
-      set (value) {
-          console.log(value)
-        if(this.$store.state.isCheck!==value){
-          this.$store.commit('change', this.$store.state.isCheck===0?1:0)
+//  vuex:{
+//      getters:{
+//        myradio
+//      },
+//    actions:{
+//
+//    }
+//  },
+  methods: {
+    myclick(index){
+        if(index !== this.myradio){
+            this.$store.dispatch("change",index)
         }
-      }
     }
+  },
+  computed: {
+//    myradio2(){
+//      return this.$store.getters.myradio
+//    }
+//    // 映射 this.myradio 为 this.$store.getters.myradio
+    ...mapGetters([
+      'myradio'
+    ])
   }
 }
 </script>
